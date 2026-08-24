@@ -76,7 +76,7 @@ def _normalize(mat: np.ndarray) -> np.ndarray:
     return mat / norms
 
 # ---------- Configuration for output ----------
-MAX_ACTUAL_VALUES_TO_SHOW = 15   # cap the list of actual values to avoid bloated JSON
+MAX_ACTUAL_VALUES_TO_SHOW = 20   # cap the list of actual values to avoid bloated JSON
 
 # ---------- Workflow ----------
 def prepare_sql_context(
@@ -139,11 +139,18 @@ def prepare_sql_context(
         table_col_scores.sort(key=lambda x: x[1], reverse=True)
         top_cols = table_col_scores[:top_k_cols_per_table]
 
+        # after loading table_index/column_index, also load once:
+        with open("relationships.json") as f:
+            relationships = json.load(f)
+
+        # inside the loop building table_entry:
         table_entry = {
             "table_name": table_name,
             "table_score": score,
             "table_description": table_doc.get("description", ""),
             "table_labels": table_doc.get("labels", ""),
+            "primary_key": relationships.get(table_name, {}).get("primary_key", []),
+            "foreign_keys": relationships.get(table_name, {}).get("foreign_keys", []),
             "columns": []
         }
 
@@ -171,7 +178,7 @@ def prepare_sql_context(
 
 
 if __name__ == "__main__":
-    query = "how many accountants do we have on the bench?"
+    query = "Placements by relay department"
     print(f"🔍 Processing query: '{query}'")
     context = prepare_sql_context(query, debug=True)
 

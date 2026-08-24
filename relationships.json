@@ -1,0 +1,272 @@
+{
+  "cases_customer_management": {
+    "primary_key": [
+      "CASE_ID",
+      "CREATED_DATETIME",
+      "MODIFIED_DATETIME",
+      "ASSIGN_DATETIME",
+      "TITLE",
+      "Assign_Datetime date",
+      "Created_Datetime date",
+      "Modified_Datetime date",
+      "Own_Datetime date"
+    ],
+    "foreign_keys": []
+  },
+  "case_sales_activity": {
+    "primary_key": [
+      "Title",
+      "CASE_ID",
+      "MODIFIED_DATETIME"
+    ],
+    "foreign_keys": []
+  },
+  "case_sales_leads": {
+    "primary_key": [
+      "Title",
+      "Assign_Datetime date",
+      "CASE_ID",
+      "CREATED_DATETIME",
+      "MODIFIED_DATETIME",
+      "Modified_Datetime date",
+      "OWN_DATETIME"
+    ],
+    "foreign_keys": []
+  },
+  "contactupdate": {
+    "primary_key": [
+      "Entity_ID",
+      "DESCRIPTION"
+    ],
+    "foreign_keys": []
+  },
+  "customer_success_check_in": {
+    "primary_key": [
+      "ITEM_INSTANCE_TRAN_ID",
+      "CREATED_DATETIME",
+      "MODIFIED_DATETIME",
+      "FINALIZED_DATETIME_DATE"
+    ],
+    "foreign_keys": []
+  },
+  "department_heirarchy": {
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_Datetime",
+      "Modified_Datetime",
+      "HIERARCHY_CREATED_DATE_TIME"
+    ],
+    "foreign_keys": []
+  },
+  "entityopportunity": {
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_Datetime",
+      "Modified_Datetime",
+      "Assign_Datetime"
+    ],
+    "foreign_keys": []
+  },
+  "Entity_Company": {
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_Datetime",
+      "Modified_Datetime",
+      "Assign_Datetime",
+      "Own_Datetime Date",
+      "Modified_Datetime Date",
+      "Assign_Datetime Date"
+    ],
+    "foreign_keys": []
+  },
+  "entity_contact": {
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Modified_Datetime"
+    ],
+    "foreign_keys": []
+  },
+  "entity_event_attendee": {
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_Datetime",
+      "Modified_Datetime"
+    ],
+    "foreign_keys": []
+  },
+  "entity_nps_survey": {
+    "primary_key": [
+      "Entity_Type_ID",
+      "Entity_Type_Name",
+      "Entity_ID",
+      "Owned_by_SAM",
+      "Owned_by_Display_Name",
+      "Own_Datetime",
+      "Created_by_SAM",
+      "Created_by_Display_Name",
+      "Created_Datetime",
+      "Modified_by_Sam",
+      "Modified_by_Display_Name",
+      "Modified_Datetime",
+      "Is_Active",
+      "START_DATE",
+      "FREQUENCY",
+      "ACTIVE"
+    ],
+    "foreign_keys": []
+  },
+  "entity_opportunity_update": {
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime"
+    ],
+    "foreign_keys": []
+  },
+  "entity_placement": {
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_Datetime",
+      "Modified_Datetime"
+    ],
+    "foreign_keys": []
+  },
+  "job": {
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_Datetime",
+      "Modified_Datetime"
+    ],
+    "foreign_keys": []
+  },
+  "management_resources_wellness_check_in": {
+    "primary_key": [
+      "ITEM_INSTANCE_TRAN_ID",
+      "MODIFIED_DATETIME",
+      "CREATED_DATETIME_DATE",
+      "FINALIZED_DATETIME_DATE"
+    ],
+    "foreign_keys": []
+  },
+  "marketing_event": {
+    "primary_key": [
+      "Event Name & Date",
+      "Location",
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_by_SAM",
+      "Created_Datetime",
+      "Modified_by_Sam",
+      "Modified_Datetime",
+      "Assigned_to_Sam",
+      "Assign_Datetime",
+      "Own_Datetime Date",
+      "Own_Datetime Year",
+      "Own_Datetime Month",
+      "Own_Datetime DateRange",
+      "Own_Datetime WeekNumber",
+      "Own_Datetime Week",
+      "Own_Datetime MonthSince",
+      "Own_Datetime DaySince",
+      "Modified_Datetime Date",
+      "Modified_Datetime Year",
+      "Modified_Datetime Month",
+      "Modified_Datetime WeekNumber",
+      "Modified_Datetime Week",
+      "Modified_Datetime MonthSince",
+      "Modified_Datetime WeekSince",
+      "Modified_Datetime DaySince",
+      "Assign_Datetime Date",
+      "DATE_OF_EVENT Year",
+      "DATE_OF_EVENT Month",
+      "DATE_OF_EVENT Week",
+      "DATE_OF_EVENT MonthSince",
+      "REMINDER_DATE Date"
+    ],
+    "foreign_keys": []
+  },
+  "nps_survey_result": {
+    "primary_key": [
+      "Company Name",
+      "Email ID",
+      "Survey Result",
+      "SurveyDateTime",
+      "Created_by_Display_Name",
+      "Created_by_SAM",
+      "Created_Datetime",
+      "Entity_ID",
+      "Modified_by_Display_Name",
+      "Modified_by_Sam",
+      "Modified_Datetime",
+      "Own_Datetime",
+      "Owned_by_SAM",
+      "Modified_Datetime Date",
+      "Modified_Datetime Year",
+      "Modified_Datetime Month",
+      "Modified_Datetime WeekNumber",
+      "Modified_Datetime Week",
+      "Modified_Datetime MonthSince",
+      "Modified_Datetime DaySince",
+      "Own_Datetime Date",
+      "Own_Datetime Year",
+      "Own_Datetime Month",
+      "Own_Datetime WeekNumber",
+      "Own_Datetime MonthSince",
+      "Own_Datetime WeekSince",
+      "Own_Datetime DaySince",
+      "SURVEYDATETIME Date",
+      "SURVEYDATETIME Month",
+      "SURVEYDATETIME WeekNumber",
+      "SURVEYDATETIME Week",
+      "SURVEYDATETIME DaySince"
+    ],
+    "foreign_keys": []
+  },
+  "position": {
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_Datetime",
+      "Modified_Datetime"
+    ],
+    "foreign_keys": []
+  },
+  "relay_user": {
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_Datetime",
+      "Modified_Datetime",
+      "Own_Datetime Date"
+    ],
+    "foreign_keys": []
+  },
+  "resource_wellness_check_in_question": {
+    "primary_key": [
+      "ITEM_INSTANCE_TRAN_ID",
+      "CREATED_DATETIME_DATE"
+    ],
+    "foreign_keys": []
+  },
+  "rhc_location": {
+    "primary_key": [
+      "Entity_ID",
+      "Owned_by_SAM",
+      "Own_Datetime",
+      "Created_by_Display_Name",
+      "Created_Datetime",
+      "Modified_by_Sam",
+      "Modified_Datetime",
+      "Assigned_to_Sam",
+      "Assign_Datetime",
+      "LOCATION_TYPE_EXD_OBJECT_ID"
+    ],
+    "foreign_keys": []
+  }
+}

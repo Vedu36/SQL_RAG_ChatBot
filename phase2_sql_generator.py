@@ -66,24 +66,49 @@ chat_client, _ = find_working_chat_client(CHAT_ENDPOINT, CHAT_MODEL, CHAT_KEY, C
 
 # ---------- SQL generation prompt ----------
 def generate_sql(user_query: str, context: dict) -> str:
-    """
-    Given the user query and the schema context (from phase 1),
-    ask the LLM to produce a SQLite SELECT query.
-    """
     schema_text = json.dumps(context, indent=2)
 
     prompt = f"""
 You are a helpful assistant that translates natural language questions into SQLite queries.
 
-Given the following database schema (tables, columns, descriptions, data types, and filterable/aggregatable flags), generate a **single** SQLite SELECT query that answers the user's question.
+Given the following database schema (tables, columns, primary keys, foreign keys,
+descriptions, data types, and filterable/aggregatable flags), generate a
+**single** SQLite SELECT query that answers the user's question.
 
 Schema context (JSON):
 {schema_text}
 
 User question: {user_query}
 
+Rules for joins:
+- Each table's "foreign_keys" list is the ONLY source of truth for how tables relate.
+  A foreign_keys entry like {{"column": "customer_id", "references_table": "customers",
+  "references_column": "id"}} means: JOIN customers ON <this_table>.customer_id = customers.id
+- If the question needs data from more than one table, you MUST find a path between
+  them using only the documented foreign_keys (chaining through an intermediate table
+  if necessary). Never invent a join condition that isn't backed by a foreign_keys entry.
+- You may reference a "column" named inside foreign_keys even if it does not appear in
+  that table's "columns" list — it is still a real column.
+- If no foreign_keys path connects the tables needed to answer the question, do not
+  guess a join — instead return: SELECT 'insufficient schema information' AS error;
+- Always give every table an alias, and always qualify every column with its table
+  alias in JOINs, SELECT, WHERE, and ORDER BY (e.g. c.id, o.customer_id), even if a
+  column name isn't ambiguous yet — this avoids ambiguous-column errors when columns
+  share names across tables.
+
+Example (same JSON schema style, illustrating a correct join):
+Schema: tables "orders" (columns: id, customer_id, total; foreign_keys: [{{"column":
+"customer_id", "references_table": "customers", "references_column": "id"}}]) and
+"customers" (columns: id, name)
+Question: "total order amount per customer name"
+SQL:
+SELECT c.name, SUM(o.total) AS total_amount
+FROM orders o
+JOIN customers c ON o.customer_id = c.id
+GROUP BY c.name;
+
 Instructions:
-- Only generate a SELECT query – no DDL, no updates, no deletes.
+- Only generate a SELECT query - no DDL, no updates, no deletes.
 - Use the table names and column names exactly as provided.
 - Output **only** the SQL query, no extra text, no code fences, no explanation.
 
@@ -93,11 +118,11 @@ SQL:
     response = chat_client.chat.completions.create(
         model=CHAT_MODEL,
         messages=[{"role": "user", "content": prompt}],
-        temperature=0.1,
+        temperature=0,
         max_tokens=500
     )
+
     sql = response.choices[0].message.content.strip()
-    # Remove markdown code fences if present
     if sql.startswith("```sql"):
         sql = sql[6:]
     if sql.startswith("```"):
@@ -204,5 +229,5 @@ def answer_query(user_query: str, context_path: str = "sql_context.json", db_pat
 
 if __name__ == "__main__":
     # Example usage
-    user_query = "how many accountants do we have on the bench?"
+    user_query = "Placements by relay department"
     answer_query(user_query)

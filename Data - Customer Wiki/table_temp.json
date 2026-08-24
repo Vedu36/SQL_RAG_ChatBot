@@ -50,8 +50,8 @@
       "OWN_DATETIME"
     ],
     "related_tables": [
-      "case_sales_activity",
-      "cases_customer_management"
+      "cases_customer_management",
+      "case_sales_activity"
     ]
   },
   {
@@ -64,13 +64,13 @@
       "DESCRIPTION"
     ],
     "related_tables": [
-      "entity_contact",
-      "entity_placement",
-      "entity_event_attendee",
       "entity_opportunity_update",
+      "entity_contact",
       "entityopportunity",
-      "Entity_Company",
-      "entity_nps_survey"
+      "entity_placement",
+      "entity_nps_survey",
+      "entity_event_attendee",
+      "Entity_Company"
     ]
   },
   {
@@ -85,8 +85,8 @@
       "FINALIZED_DATETIME_DATE"
     ],
     "related_tables": [
-      "case_sales_activity",
       "cases_customer_management",
+      "case_sales_activity",
       "case_sales_leads"
     ]
   },
@@ -103,13 +103,13 @@
       "HIERARCHY_CREATED_DATE_TIME"
     ],
     "related_tables": [
-      "entity_contact",
-      "entity_placement",
-      "entity_event_attendee",
       "entity_opportunity_update",
+      "entity_contact",
       "entityopportunity",
-      "Entity_Company",
-      "entity_nps_survey"
+      "entity_placement",
+      "entity_nps_survey",
+      "entity_event_attendee",
+      "Entity_Company"
     ]
   },
   {
@@ -125,12 +125,12 @@
       "Assign_Datetime"
     ],
     "related_tables": [
+      "entity_opportunity_update",
       "entity_contact",
       "entity_placement",
+      "entity_nps_survey",
       "entity_event_attendee",
-      "entity_opportunity_update",
-      "Entity_Company",
-      "entity_nps_survey"
+      "Entity_Company"
     ]
   },
   {
@@ -149,12 +149,12 @@
       "Assign_Datetime Date"
     ],
     "related_tables": [
-      "entity_contact",
-      "entity_placement",
-      "entity_event_attendee",
       "entity_opportunity_update",
+      "entity_contact",
       "entityopportunity",
-      "entity_nps_survey"
+      "entity_placement",
+      "entity_nps_survey",
+      "entity_event_attendee"
     ]
   },
   {
@@ -168,12 +168,12 @@
       "Modified_Datetime"
     ],
     "related_tables": [
-      "entity_placement",
-      "entity_event_attendee",
       "entity_opportunity_update",
       "entityopportunity",
-      "Entity_Company",
-      "entity_nps_survey"
+      "entity_placement",
+      "entity_nps_survey",
+      "entity_event_attendee",
+      "Entity_Company"
     ]
   },
   {
@@ -188,12 +188,12 @@
       "Modified_Datetime"
     ],
     "related_tables": [
-      "entity_contact",
-      "entity_placement",
       "entity_opportunity_update",
+      "entity_contact",
       "entityopportunity",
-      "Entity_Company",
-      "entity_nps_survey"
+      "entity_placement",
+      "entity_nps_survey",
+      "Entity_Company"
     ]
   },
   {
@@ -220,11 +220,11 @@
       "ACTIVE"
     ],
     "related_tables": [
+      "entity_opportunity_update",
       "entity_contact",
+      "entityopportunity",
       "entity_placement",
       "entity_event_attendee",
-      "entity_opportunity_update",
-      "entityopportunity",
       "Entity_Company"
     ]
   },
@@ -239,11 +239,11 @@
     ],
     "related_tables": [
       "entity_contact",
-      "entity_placement",
-      "entity_event_attendee",
       "entityopportunity",
-      "Entity_Company",
-      "entity_nps_survey"
+      "entity_placement",
+      "entity_nps_survey",
+      "entity_event_attendee",
+      "Entity_Company"
     ]
   },
   {
@@ -258,12 +258,12 @@
       "Modified_Datetime"
     ],
     "related_tables": [
-      "entity_contact",
-      "entity_event_attendee",
       "entity_opportunity_update",
+      "entity_contact",
       "entityopportunity",
-      "Entity_Company",
-      "entity_nps_survey"
+      "entity_nps_survey",
+      "entity_event_attendee",
+      "Entity_Company"
     ]
   },
   {
@@ -278,13 +278,13 @@
       "Modified_Datetime"
     ],
     "related_tables": [
-      "entity_contact",
-      "entity_placement",
-      "entity_event_attendee",
       "entity_opportunity_update",
+      "entity_contact",
       "entityopportunity",
-      "Entity_Company",
-      "entity_nps_survey"
+      "entity_placement",
+      "entity_nps_survey",
+      "entity_event_attendee",
+      "Entity_Company"
     ]
   },
   {
@@ -340,13 +340,13 @@
       "REMINDER_DATE Date"
     ],
     "related_tables": [
-      "entity_contact",
-      "entity_placement",
-      "entity_event_attendee",
       "entity_opportunity_update",
+      "entity_contact",
       "entityopportunity",
-      "Entity_Company",
-      "entity_nps_survey"
+      "entity_placement",
+      "entity_nps_survey",
+      "entity_event_attendee",
+      "Entity_Company"
     ]
   },
   {
@@ -389,13 +389,13 @@
       "SURVEYDATETIME DaySince"
     ],
     "related_tables": [
-      "entity_contact",
-      "entity_placement",
-      "entity_event_attendee",
       "entity_opportunity_update",
+      "entity_contact",
       "entityopportunity",
-      "Entity_Company",
-      "entity_nps_survey"
+      "entity_placement",
+      "entity_nps_survey",
+      "entity_event_attendee",
+      "Entity_Company"
     ]
   },
   {
@@ -410,13 +410,13 @@
       "Modified_Datetime"
     ],
     "related_tables": [
-      "entity_contact",
-      "entity_placement",
-      "entity_event_attendee",
       "entity_opportunity_update",
+      "entity_contact",
       "entityopportunity",
-      "Entity_Company",
-      "entity_nps_survey"
+      "entity_placement",
+      "entity_nps_survey",
+      "entity_event_attendee",
+      "Entity_Company"
     ]
   },
   {
@@ -432,13 +432,13 @@
       "Own_Datetime Date"
     ],
     "related_tables": [
-      "entity_contact",
-      "entity_placement",
-      "entity_event_attendee",
       "entity_opportunity_update",
+      "entity_contact",
       "entityopportunity",
-      "Entity_Company",
-      "entity_nps_survey"
+      "entity_placement",
+      "entity_nps_survey",
+      "entity_event_attendee",
+      "Entity_Company"
     ]
   },
   {
@@ -451,8 +451,8 @@
       "CREATED_DATETIME_DATE"
     ],
     "related_tables": [
-      "case_sales_activity",
       "cases_customer_management",
+      "case_sales_activity",
       "case_sales_leads"
     ]
   },
@@ -474,13 +474,13 @@
       "LOCATION_TYPE_EXD_OBJECT_ID"
     ],
     "related_tables": [
-      "entity_contact",
-      "entity_placement",
-      "entity_event_attendee",
       "entity_opportunity_update",
+      "entity_contact",
       "entityopportunity",
-      "Entity_Company",
-      "entity_nps_survey"
+      "entity_placement",
+      "entity_nps_survey",
+      "entity_event_attendee",
+      "Entity_Company"
     ]
   }
 ]
