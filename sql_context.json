@@ -1,0 +1,225 @@
+{
+  "user_query": "how many accountants we don't have on the bench?",
+  "relevant_schema": [
+    {
+      "table_name": "relay_user",
+      "table_score": 0.22322933236726625,
+      "table_description": "This table is an HR and workforce directory for \u201cRelay User\u201d records, combining employee profile, hiring/termination, bench/allocation and account metadata. It answers questions like: who is active or inactive, who is bench (unassigned) vs placed, hire/re-hire and termination timelines, reporting lines and office locations, job title and standardized role templates, recruiter and employer sources, plus contact and account ownership for audits. Notable columns: HIRE_REHIRE_DATE (hire or rehire/onboard date), TERMINATION_DATE (exit/last day), BENCH_START_DATE (bench/unassigned start), RESOURCE_START_DATE (customer/placement start), Is_Active/User Status (account active/inactive), Job/Job Title/Standard Job Title Template, Relay Department/Company/Office City/Country, Reporting Manager, Email/Phone, Own/Created/Modified datetimes for audit.",
+      "table_labels": "employees,hr-directory,bench,hire_date,termination_date,resource_start_date,job_title,department,reporting_manager,location,contact_info,user_status,recruiter,audit_trail,employee_type",
+      "columns": [
+        {
+          "column_name": "BENCH_START_DATE MonthSince",
+          "description": "Months since resource started bench status",
+          "data_type": "float64",
+          "is_filterable": false,
+          "is_aggregatable": true,
+          "actual_values": [],
+          "score": 0.33672085767339466
+        },
+        {
+          "column_name": "Bench Status",
+          "description": "Current bench availability/status label",
+          "data_type": "object",
+          "is_filterable": true,
+          "is_aggregatable": false,
+          "actual_values": [
+            "Placed",
+            "Not Available",
+            "Placed but Available",
+            "Coming Soon",
+            "Available"
+          ],
+          "score": 0.32641026978291576
+        },
+        {
+          "column_name": "Bench Display Name (e.g. John M.)",
+          "description": "Short display name for bench lists",
+          "data_type": "object",
+          "is_filterable": true,
+          "is_aggregatable": false,
+          "actual_values": [],
+          "score": 0.3060056875147083
+        },
+        {
+          "column_name": "BENCH_START_DATE MonthsSinceCat",
+          "description": "Categorized months-since-bench bucket",
+          "data_type": "object",
+          "is_filterable": true,
+          "is_aggregatable": false,
+          "actual_values": [
+            "Standard",
+            "Gamma",
+            "Other",
+            "Alpha",
+            "Beta",
+            "Delta"
+          ],
+          "score": 0.29292478007955447
+        },
+        {
+          "column_name": "BENCH_START_DATE DaySince",
+          "description": "Days since resource started bench status",
+          "data_type": "float64",
+          "is_filterable": false,
+          "is_aggregatable": true,
+          "actual_values": [],
+          "score": 0.29062876516301184
+        }
+      ]
+    },
+    {
+      "table_name": "entity_placement",
+      "table_score": 0.20846824842136802,
+      "table_description": "This table tracks individual placements/engagements of resources (contractors, temps, consultants or employees) with customers. Each row shows the resource and customer, job/position, department/relay team, ownership/audit fields (Owned_by_*, Created_by_*, Modified_by_*), assignment details (Assigned_to_*), contract dates (START_DATE, END_DATE, termination notification dates), commercial fields (BILLING_AMOUNT, PRO_RATE, ANCILLARY_AMOUNT, ADDITIONAL_CHARGE), status and pathway (Is_Active, ACTIVE, PLACEMENT_STATUS, PATHWAY \u2014 e.g., Bench/unassigned vs Placed), referral and sales data (REFERRAL_PARTNER, REFERRAL_CODE, SALES_REP, referral rates/fees), backfill indicators and end reasons. Use it to answer who\u2019s placed or on the bench, billable revenue and pro\u2011rations, upcoming terminations, backfill needs, referral payments, placements by customer/department/location/rep, and time\u2011based reporting by start/end dates.",
+      "table_labels": "placements,assignments,resource,resource_name,customer,position,start_date,end_date,billing_amount,pro_rate,backfill,referral,sales_rep,termination,bench",
+      "columns": [
+        {
+          "column_name": "POSITION",
+          "description": "Position or title for the placement",
+          "data_type": "object",
+          "is_filterable": true,
+          "is_aggregatable": false,
+          "actual_values": [
+            "Accountant",
+            "Recruiter",
+            "Financial Analyst",
+            "Data Analyst",
+            "Marketing Coordinator",
+            "Bookkeeper",
+            "HR Generalist",
+            "Operations Associate",
+            "Software Developer",
+            "Project Manager",
+            "Customer Success Manager",
+            "QA Engineer",
+            "Payroll Specialist",
+            "Executive Assistant",
+            "Support Specialist"
+          ],
+          "score": 0.29321060677169153
+        },
+        {
+          "column_name": "PLACEMENT_NAME",
+          "description": "Descriptive placement name",
+          "data_type": "object",
+          "is_filterable": true,
+          "is_aggregatable": false,
+          "actual_values": [
+            "Accountant Placement",
+            "Recruiter Placement",
+            "Financial Analyst Placement",
+            "Data Analyst Placement",
+            "Marketing Coordinator Placement",
+            "Bookkeeper Placement",
+            "HR Generalist Placement",
+            "Operations Associate Placement",
+            "Software Developer Placement",
+            "Project Manager Placement",
+            "Customer Success Manager Placement",
+            "QA Engineer Placement",
+            "Payroll Specialist Placement",
+            "Executive Assistant Placement",
+            "Support Specialist Placement"
+          ],
+          "score": 0.2845099956906967
+        },
+        {
+          "column_name": "ADDITIONAL_CHARGE",
+          "description": "Additional monetary charge amount",
+          "data_type": "float64",
+          "is_filterable": true,
+          "is_aggregatable": true,
+          "actual_values": [
+            "1163.0",
+            "5999.0",
+            "7130.0",
+            "3354.0",
+            "9319.0",
+            "4026.0",
+            "9176.0",
+            "2094.0",
+            "4480.0",
+            "2837.0",
+            "7304.0",
+            "1033.0",
+            "8015.0",
+            "8025.0",
+            "3625.0"
+          ],
+          "score": 0.23470774979471323
+        },
+        {
+          "column_name": "SALES_REP",
+          "description": "Sales representative name",
+          "data_type": "object",
+          "is_filterable": true,
+          "is_aggregatable": false,
+          "actual_values": [],
+          "score": 0.22789561639768371
+        },
+        {
+          "column_name": "Owned_by_SAM",
+          "description": "Owner's system account manager email address",
+          "data_type": "object",
+          "is_filterable": true,
+          "is_aggregatable": false,
+          "actual_values": [],
+          "score": 0.2267233767340414
+        }
+      ]
+    },
+    {
+      "table_name": "position",
+      "table_score": 0.20712745601652005,
+      "table_description": "This table holds position-level records (unique Entity_ID) used for headcount, recruiting and role management. Each row ties a job template (JOB_NAME and JOB_NAME_EXD_OBJECT_ID) to a customer/stakeholder (CUSTOMER_NAME, CUSTOMER_DEPARTMENT and their lookup IDs), ownership and assignment (Owned_by_SAM/Display_Name, Assigned_to_Sam/Display_Name), audit timestamps (Created_/Modified_/Own_/Assign_Datetime) and contact info (EMAIL_ADDRESS, CELL_PHONE_NUMBER, TITLE). Flags like Is_Active, POSITION_STATUS and BACKFILL_REQUIRED indicate whether a role is active, filled/open or needs backfill. HIRING_AUTHORITY and relay/department lookup fields identify approvers and organizational routing. Useful for questions about vacancies, owners, recruiters, hiring approvals, and department-level headcount.",
+      "table_labels": "positions, role, job, requisition, vacancy, opening, owner, assignee, hiring_manager, backfill_required, department, status, contact_info, audit_trail, sam_account",
+      "columns": [
+        {
+          "column_name": "POSITION_NAME",
+          "description": "Name of the position",
+          "data_type": "object",
+          "is_filterable": true,
+          "is_aggregatable": false,
+          "actual_values": [],
+          "score": 0.24475558396988178
+        },
+        {
+          "column_name": "Owned_by_SAM",
+          "description": "Owner's system account or email address",
+          "data_type": "object",
+          "is_filterable": true,
+          "is_aggregatable": false,
+          "actual_values": [],
+          "score": 0.21448653162063908
+        },
+        {
+          "column_name": "HIRING_AUTHORITY",
+          "description": "Hiring authority or requisition code",
+          "data_type": "object",
+          "is_filterable": true,
+          "is_aggregatable": false,
+          "actual_values": [],
+          "score": 0.19444730623520612
+        },
+        {
+          "column_name": "HIRING_AUTHORITY_EXD_OBJECT_ID",
+          "description": "External identifier for the hiring authority object",
+          "data_type": "float64",
+          "is_filterable": false,
+          "is_aggregatable": true,
+          "actual_values": [],
+          "score": 0.183883452925729
+        },
+        {
+          "column_name": "POSITION_NAME_1",
+          "description": "Alternate or secondary position name",
+          "data_type": "object",
+          "is_filterable": true,
+          "is_aggregatable": false,
+          "actual_values": [],
+          "score": 0.18155133652826755
+        }
+      ]
+    }
+  ]
+}

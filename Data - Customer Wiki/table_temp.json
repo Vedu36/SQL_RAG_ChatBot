@@ -1,0 +1,486 @@
+[
+  {
+    "table_name": "cases_customer_management",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "CASE_ID",
+      "CREATED_DATETIME",
+      "MODIFIED_DATETIME",
+      "ASSIGN_DATETIME",
+      "TITLE",
+      "Assign_Datetime date",
+      "Created_Datetime date",
+      "Modified_Datetime date",
+      "Own_Datetime date"
+    ],
+    "related_tables": [
+      "case_sales_activity",
+      "case_sales_leads"
+    ]
+  },
+  {
+    "table_name": "case_sales_activity",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Title",
+      "CASE_ID",
+      "MODIFIED_DATETIME"
+    ],
+    "related_tables": [
+      "cases_customer_management",
+      "case_sales_leads"
+    ]
+  },
+  {
+    "table_name": "case_sales_leads",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Title",
+      "Assign_Datetime date",
+      "CASE_ID",
+      "CREATED_DATETIME",
+      "MODIFIED_DATETIME",
+      "Modified_Datetime date",
+      "OWN_DATETIME"
+    ],
+    "related_tables": [
+      "case_sales_activity",
+      "cases_customer_management"
+    ]
+  },
+  {
+    "table_name": "contactupdate",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Entity_ID",
+      "DESCRIPTION"
+    ],
+    "related_tables": [
+      "entity_contact",
+      "entity_placement",
+      "entity_event_attendee",
+      "entity_opportunity_update",
+      "entityopportunity",
+      "Entity_Company",
+      "entity_nps_survey"
+    ]
+  },
+  {
+    "table_name": "customer_success_check_in",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "ITEM_INSTANCE_TRAN_ID",
+      "CREATED_DATETIME",
+      "MODIFIED_DATETIME",
+      "FINALIZED_DATETIME_DATE"
+    ],
+    "related_tables": [
+      "case_sales_activity",
+      "cases_customer_management",
+      "case_sales_leads"
+    ]
+  },
+  {
+    "table_name": "department_heirarchy",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_Datetime",
+      "Modified_Datetime",
+      "HIERARCHY_CREATED_DATE_TIME"
+    ],
+    "related_tables": [
+      "entity_contact",
+      "entity_placement",
+      "entity_event_attendee",
+      "entity_opportunity_update",
+      "entityopportunity",
+      "Entity_Company",
+      "entity_nps_survey"
+    ]
+  },
+  {
+    "table_name": "entityopportunity",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_Datetime",
+      "Modified_Datetime",
+      "Assign_Datetime"
+    ],
+    "related_tables": [
+      "entity_contact",
+      "entity_placement",
+      "entity_event_attendee",
+      "entity_opportunity_update",
+      "Entity_Company",
+      "entity_nps_survey"
+    ]
+  },
+  {
+    "table_name": "Entity_Company",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_Datetime",
+      "Modified_Datetime",
+      "Assign_Datetime",
+      "Own_Datetime Date",
+      "Modified_Datetime Date",
+      "Assign_Datetime Date"
+    ],
+    "related_tables": [
+      "entity_contact",
+      "entity_placement",
+      "entity_event_attendee",
+      "entity_opportunity_update",
+      "entityopportunity",
+      "entity_nps_survey"
+    ]
+  },
+  {
+    "table_name": "entity_contact",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Modified_Datetime"
+    ],
+    "related_tables": [
+      "entity_placement",
+      "entity_event_attendee",
+      "entity_opportunity_update",
+      "entityopportunity",
+      "Entity_Company",
+      "entity_nps_survey"
+    ]
+  },
+  {
+    "table_name": "entity_event_attendee",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_Datetime",
+      "Modified_Datetime"
+    ],
+    "related_tables": [
+      "entity_contact",
+      "entity_placement",
+      "entity_opportunity_update",
+      "entityopportunity",
+      "Entity_Company",
+      "entity_nps_survey"
+    ]
+  },
+  {
+    "table_name": "entity_nps_survey",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Entity_Type_ID",
+      "Entity_Type_Name",
+      "Entity_ID",
+      "Owned_by_SAM",
+      "Owned_by_Display_Name",
+      "Own_Datetime",
+      "Created_by_SAM",
+      "Created_by_Display_Name",
+      "Created_Datetime",
+      "Modified_by_Sam",
+      "Modified_by_Display_Name",
+      "Modified_Datetime",
+      "Is_Active",
+      "START_DATE",
+      "FREQUENCY",
+      "ACTIVE"
+    ],
+    "related_tables": [
+      "entity_contact",
+      "entity_placement",
+      "entity_event_attendee",
+      "entity_opportunity_update",
+      "entityopportunity",
+      "Entity_Company"
+    ]
+  },
+  {
+    "table_name": "entity_opportunity_update",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime"
+    ],
+    "related_tables": [
+      "entity_contact",
+      "entity_placement",
+      "entity_event_attendee",
+      "entityopportunity",
+      "Entity_Company",
+      "entity_nps_survey"
+    ]
+  },
+  {
+    "table_name": "entity_placement",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_Datetime",
+      "Modified_Datetime"
+    ],
+    "related_tables": [
+      "entity_contact",
+      "entity_event_attendee",
+      "entity_opportunity_update",
+      "entityopportunity",
+      "Entity_Company",
+      "entity_nps_survey"
+    ]
+  },
+  {
+    "table_name": "job",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_Datetime",
+      "Modified_Datetime"
+    ],
+    "related_tables": [
+      "entity_contact",
+      "entity_placement",
+      "entity_event_attendee",
+      "entity_opportunity_update",
+      "entityopportunity",
+      "Entity_Company",
+      "entity_nps_survey"
+    ]
+  },
+  {
+    "table_name": "management_resources_wellness_check_in",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "ITEM_INSTANCE_TRAN_ID",
+      "MODIFIED_DATETIME",
+      "CREATED_DATETIME_DATE",
+      "FINALIZED_DATETIME_DATE"
+    ],
+    "related_tables": []
+  },
+  {
+    "table_name": "marketing_event",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Event Name & Date",
+      "Location",
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_by_SAM",
+      "Created_Datetime",
+      "Modified_by_Sam",
+      "Modified_Datetime",
+      "Assigned_to_Sam",
+      "Assign_Datetime",
+      "Own_Datetime Date",
+      "Own_Datetime Year",
+      "Own_Datetime Month",
+      "Own_Datetime DateRange",
+      "Own_Datetime WeekNumber",
+      "Own_Datetime Week",
+      "Own_Datetime MonthSince",
+      "Own_Datetime DaySince",
+      "Modified_Datetime Date",
+      "Modified_Datetime Year",
+      "Modified_Datetime Month",
+      "Modified_Datetime WeekNumber",
+      "Modified_Datetime Week",
+      "Modified_Datetime MonthSince",
+      "Modified_Datetime WeekSince",
+      "Modified_Datetime DaySince",
+      "Assign_Datetime Date",
+      "DATE_OF_EVENT Year",
+      "DATE_OF_EVENT Month",
+      "DATE_OF_EVENT Week",
+      "DATE_OF_EVENT MonthSince",
+      "REMINDER_DATE Date"
+    ],
+    "related_tables": [
+      "entity_contact",
+      "entity_placement",
+      "entity_event_attendee",
+      "entity_opportunity_update",
+      "entityopportunity",
+      "Entity_Company",
+      "entity_nps_survey"
+    ]
+  },
+  {
+    "table_name": "nps_survey_result",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Company Name",
+      "Email ID",
+      "Survey Result",
+      "SurveyDateTime",
+      "Created_by_Display_Name",
+      "Created_by_SAM",
+      "Created_Datetime",
+      "Entity_ID",
+      "Modified_by_Display_Name",
+      "Modified_by_Sam",
+      "Modified_Datetime",
+      "Own_Datetime",
+      "Owned_by_SAM",
+      "Modified_Datetime Date",
+      "Modified_Datetime Year",
+      "Modified_Datetime Month",
+      "Modified_Datetime WeekNumber",
+      "Modified_Datetime Week",
+      "Modified_Datetime MonthSince",
+      "Modified_Datetime DaySince",
+      "Own_Datetime Date",
+      "Own_Datetime Year",
+      "Own_Datetime Month",
+      "Own_Datetime WeekNumber",
+      "Own_Datetime MonthSince",
+      "Own_Datetime WeekSince",
+      "Own_Datetime DaySince",
+      "SURVEYDATETIME Date",
+      "SURVEYDATETIME Month",
+      "SURVEYDATETIME WeekNumber",
+      "SURVEYDATETIME Week",
+      "SURVEYDATETIME DaySince"
+    ],
+    "related_tables": [
+      "entity_contact",
+      "entity_placement",
+      "entity_event_attendee",
+      "entity_opportunity_update",
+      "entityopportunity",
+      "Entity_Company",
+      "entity_nps_survey"
+    ]
+  },
+  {
+    "table_name": "position",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_Datetime",
+      "Modified_Datetime"
+    ],
+    "related_tables": [
+      "entity_contact",
+      "entity_placement",
+      "entity_event_attendee",
+      "entity_opportunity_update",
+      "entityopportunity",
+      "Entity_Company",
+      "entity_nps_survey"
+    ]
+  },
+  {
+    "table_name": "relay_user",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Entity_ID",
+      "Own_Datetime",
+      "Created_Datetime",
+      "Modified_Datetime",
+      "Own_Datetime Date"
+    ],
+    "related_tables": [
+      "entity_contact",
+      "entity_placement",
+      "entity_event_attendee",
+      "entity_opportunity_update",
+      "entityopportunity",
+      "Entity_Company",
+      "entity_nps_survey"
+    ]
+  },
+  {
+    "table_name": "resource_wellness_check_in_question",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "ITEM_INSTANCE_TRAN_ID",
+      "CREATED_DATETIME_DATE"
+    ],
+    "related_tables": [
+      "case_sales_activity",
+      "cases_customer_management",
+      "case_sales_leads"
+    ]
+  },
+  {
+    "table_name": "rhc_location",
+    "description": "",
+    "labels": [],
+    "intent_tags": [],
+    "primary_key": [
+      "Entity_ID",
+      "Owned_by_SAM",
+      "Own_Datetime",
+      "Created_by_Display_Name",
+      "Created_Datetime",
+      "Modified_by_Sam",
+      "Modified_Datetime",
+      "Assigned_to_Sam",
+      "Assign_Datetime",
+      "LOCATION_TYPE_EXD_OBJECT_ID"
+    ],
+    "related_tables": [
+      "entity_contact",
+      "entity_placement",
+      "entity_event_attendee",
+      "entity_opportunity_update",
+      "entityopportunity",
+      "Entity_Company",
+      "entity_nps_survey"
+    ]
+  }
+]

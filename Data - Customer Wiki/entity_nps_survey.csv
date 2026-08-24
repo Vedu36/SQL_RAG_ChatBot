@@ -1,0 +1,2 @@
+Entity_Type_ID,Entity_Type_Name,Entity_ID,Owned_by_SAM,Owned_by_Display_Name,Own_Datetime,Created_by_SAM,Created_by_Display_Name,Created_Datetime,Modified_by_Sam,Modified_by_Display_Name,Modified_Datetime,Assigned_to_Sam,Assigned_to_Display_Name,Assign_Datetime,Is_Active,START_DATE,FREQUENCY,ACTIVE
+100371,NPS,126234,alex.okafor@sampleco.test,Rahul Garcia,2026-06-04 05:10:00,marco.sloan@demomail.test,Taylor Ford,2023-11-21 06:16:00,yara.patel@demomail.test,Diego Ashby,2025-10-09 16:41:00,,,,N,Standard,Other,Y
